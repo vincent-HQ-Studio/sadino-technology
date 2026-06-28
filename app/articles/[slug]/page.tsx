@@ -12,6 +12,8 @@ export default async function Page({ params }: Props) {
 
   if (!article) {
     return notFound();
+  } else {
+    console.log(article);
   }
 
   return <ArticleClientDetail article={article} />;

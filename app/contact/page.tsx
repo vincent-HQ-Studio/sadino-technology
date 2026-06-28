@@ -117,7 +117,7 @@ export default function ContactPage() {
 
           {/* FORM CARD */}
           <div className="bg-white p-8 lg:p-10 rounded-3xl shadow-[0_20px_60px_rgba(0,74,198,0.08)] border border-gray-100">
-            <div className="space-y-8">
+            <form className="space-y-8">
               {/* ================= NAME + EMAIL ================= */}
               <div className="grid md:grid-cols-2 gap-6">
                 <Input label="Full Name" placeholder="John Doe" />
@@ -191,7 +191,7 @@ export default function ContactPage() {
                   .
                 </p>
               </div>
-            </div>
+            </form>
           </div>
         </motion.div>
       </div>
@@ -201,7 +201,7 @@ export default function ContactPage() {
 
 /* ================= COMPONENTS ================= */
 
-function ContactItem({ icon: Icon, title, value }: { icon: any; title: string; value: string }) {
+function ContactItem({ icon: Icon, title, value }) {
   return (
     <motion.div
       variants={fadeUp}
@@ -233,7 +233,7 @@ function ContactItem({ icon: Icon, title, value }: { icon: any; title: string; v
   );
 }
 
-function Input({ label, placeholder }: { label: string; placeholder: string }) {
+function Input({ label, placeholder }) {
   return (
     <div className="space-y-2">
       {/* LABEL */}
@@ -265,7 +265,7 @@ function Input({ label, placeholder }: { label: string; placeholder: string }) {
   );
 }
 
-function Select({ label, options = [] }: { label: string; options: string[] }) {
+function Select({ label, options = [] }) {
   return (
     <div className="space-y-2">
       {/* LABEL */}

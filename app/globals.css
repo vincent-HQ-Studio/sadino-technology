@@ -1,21 +1,5 @@
 @import "tailwindcss";
 
-/* ================= DESIGN TOKENS (from DESIGN.md) ================= */
-
-:root {
-  --color-primary: #004ac6;
-  --color-primary-container: #2563eb;
-  --color-surface: #f7f9fb;
-  --color-surface-container: #f2f4f6;
-  --color-surface-container-low: #f2f4f6;
-  --color-surface-container-lowest: #ffffff;
-  --color-on-surface: #191c1e;
-  --color-tertiary: #005b7c;
-  --shadow-ambient: 0px 20px 40px rgba(0, 74, 198, 0.08);
-}
-
-
-
 /* ================= LAYER: UTILITIES ================= */
 
 @layer utilities {
@@ -50,11 +34,19 @@
   }
 
   .section-soft {
+<<<<<<< HEAD
     @apply py-20 bg-[#f7f9fb];
   }
 
   .section-muted {
     @apply py-20 bg-[#f2f4f6];
+=======
+    @apply py-20 bg-blue-50;
+  }
+
+  .section-muted {
+    @apply py-20 bg-gray-50;
+>>>>>>> 59b82bdc6324f43ccdb2ae70fc9cdb7fbc9fb8d9
   }
 
   /* helper */
@@ -70,7 +62,11 @@ html {
 }
 
 body {
+<<<<<<< HEAD
   @apply bg-[#f7f9fb] text-gray-900 antialiased;
+=======
+  @apply bg-white text-gray-900 antialiased font-[var(--font-poppins)];
+>>>>>>> 59b82bdc6324f43ccdb2ae70fc9cdb7fbc9fb8d9
 }
 
 /* ================= COLOR ================= */

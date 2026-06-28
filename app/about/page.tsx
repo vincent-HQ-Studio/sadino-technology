@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -51,10 +49,17 @@ export default function AboutPage() {
         </motion.p>
 
         <motion.div variants={fadeUp} className="flex gap-4">
+<<<<<<< HEAD
           <Link href="/services" className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:opacity-90 transition">
             Our Ecosystem
           </Link>
           <button className="bg-[#f2f4f6] px-8 py-4 rounded-xl font-bold hover:bg-gray-200 transition">
+=======
+          <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold">
+            Our Ecosystem
+          </button>
+          <button className="bg-gray-100 px-8 py-4 rounded-xl font-bold">
+>>>>>>> 59b82bdc6324f43ccdb2ae70fc9cdb7fbc9fb8d9
             Watch Film
           </button>
         </motion.div>
@@ -66,7 +71,11 @@ export default function AboutPage() {
         initial="hidden"
         whileInView="show"
         viewport={viewportOnce}
+<<<<<<< HEAD
         className="py-20 bg-[#f2f4f6]"
+=======
+        className="py-20 bg-gray-50"
+>>>>>>> 59b82bdc6324f43ccdb2ae70fc9cdb7fbc9fb8d9
       >
         <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-8">
           {[
@@ -98,11 +107,19 @@ export default function AboutPage() {
       >
         <motion.div variants={slideRight}>
           <Image
+<<<<<<< HEAD
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
             alt="office"
             width={600}
             height={500}
             className="rounded-3xl object-cover w-full h-full"
+=======
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c"
+            alt="office"
+            width={300}
+            height={300}
+            className="rounded-3xl object-cover"
+>>>>>>> 59b82bdc6324f43ccdb2ae70fc9cdb7fbc9fb8d9
           />
         </motion.div>
 
@@ -136,7 +153,11 @@ export default function AboutPage() {
         initial="hidden"
         whileInView="show"
         viewport={viewportOnce}
+<<<<<<< HEAD
         className="py-32 bg-[#f2f4f6]"
+=======
+        className="py-32 bg-gray-50"
+>>>>>>> 59b82bdc6324f43ccdb2ae70fc9cdb7fbc9fb8d9
       >
         <div className="max-w-7xl mx-auto px-8 text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Values that Define Us</h2>
@@ -211,9 +232,15 @@ export default function AboutPage() {
             <li>✔ Learning Budget</li>
           </ul>
 
+<<<<<<< HEAD
           <Link href="/contact" className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:opacity-90 transition">
             Join the Team
           </Link>
+=======
+          <button className="bg-blue-600 text-white px-6 py-3 rounded-xl">
+            Join the Team
+          </button>
+>>>>>>> 59b82bdc6324f43ccdb2ae70fc9cdb7fbc9fb8d9
         </motion.div>
 
         <motion.div
@@ -223,30 +250,54 @@ export default function AboutPage() {
           <Image
             src="https://images.unsplash.com/photo-1551434678-e076c223a692"
             alt=""
+<<<<<<< HEAD
             width={400}
             height={300}
             className="rounded-xl w-full object-cover aspect-[4/3]"
+=======
+            width={300}
+            height={300}
+            className="rounded-xl"
+>>>>>>> 59b82bdc6324f43ccdb2ae70fc9cdb7fbc9fb8d9
           />
           <Image
             src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
             alt=""
+<<<<<<< HEAD
             width={400}
             height={300}
             className="rounded-xl w-full object-cover aspect-[4/3]"
+=======
+            width={300}
+            height={300}
+            className="rounded-xl"
+>>>>>>> 59b82bdc6324f43ccdb2ae70fc9cdb7fbc9fb8d9
           />
           <Image
             src="https://images.unsplash.com/photo-1551434678-e076c223a692"
             alt=""
+<<<<<<< HEAD
             width={400}
             height={300}
             className="rounded-xl w-full object-cover aspect-[4/3]"
+=======
+            width={300}
+            height={300}
+            className="rounded-xl"
+>>>>>>> 59b82bdc6324f43ccdb2ae70fc9cdb7fbc9fb8d9
           />
           <Image
             src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
             alt=""
+<<<<<<< HEAD
             width={400}
             height={300}
             className="rounded-xl w-full object-cover aspect-[4/3]"
+=======
+            width={300}
+            height={300}
+            className="rounded-xl"
+>>>>>>> 59b82bdc6324f43ccdb2ae70fc9cdb7fbc9fb8d9
           />
         </motion.div>
       </motion.section>
