@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Globe, Mail, Phone, MapPin, ArrowRight, AtSign } from "lucide-react";
 import { contacts } from "@/constants/data";
+import Image from "next/image";
 
 const Footer = () => {
   const contact = contacts[0];
@@ -44,9 +45,22 @@ const Footer = () => {
         {/* BRAND */}
         <div className="md:col-span-2">
           <Link href="/" className="inline-block mb-5">
-            <span className="text-xl font-extrabold tracking-tight text-gray-900">
-              Sadino<span className="text-blue-600">Technology</span>
-            </span>
+            <div className="flex items-center gap-2.5">
+              <div className="relative w-8 h-8 shrink-0">
+                <Image
+                  src="/images/logo-icon.png"
+                  alt="Sadino Technology"
+                  fill
+                  className="object-contain"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = "none";
+                  }}
+                />
+              </div>
+              <span className="text-xl font-extrabold tracking-tight text-gray-900">
+                Sadino<span className="text-blue-600">Technology</span>
+              </span>
+            </div>
           </Link>
 
           <p className="text-sm text-gray-500 leading-relaxed mb-6 max-w-xs">
@@ -58,7 +72,10 @@ const Footer = () => {
           <ul className="space-y-3 text-sm text-gray-500">
             <li className="flex items-center gap-2.5">
               <Mail size={15} className="text-blue-500 shrink-0" />
-              <a href={`mailto:${contact.email}`} className="hover:text-blue-600 transition">
+              <a
+                href={`mailto:${contact.email}`}
+                className="hover:text-blue-600 transition"
+              >
                 {contact.email}
               </a>
             </li>
@@ -141,8 +158,12 @@ const Footer = () => {
       {/* BOTTOM */}
       <div className="border-t border-gray-100">
         <div className="container-custom py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-gray-400">
-          <span>© {new Date().getFullYear()} Sadino Technology. All rights reserved.</span>
-          <span className="hidden md:block">Built for the Digital Architect.</span>
+          <span>
+            © {new Date().getFullYear()} Sadino Technology. All rights reserved.
+          </span>
+          <span className="hidden md:block">
+            Built for the Digital Architect.
+          </span>
         </div>
       </div>
     </footer>

@@ -42,12 +42,16 @@ export default function Navbar() {
   }, [lastScroll]);
 
   // Close mobile on route change
-  useEffect(() => { setMobileOpen(false); }, [pathname]);
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   // Lock body scroll
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   return (
@@ -124,7 +128,10 @@ export default function Navbar() {
                 <span className="font-extrabold text-lg">
                   Sadino<span className="text-blue-600">Technology</span>
                 </span>
-                <button onClick={() => setMobileOpen(false)} className="p-2 rounded-xl hover:bg-gray-100">
+                <button
+                  onClick={() => setMobileOpen(false)}
+                  className="p-2 rounded-xl hover:bg-gray-100"
+                >
                   <X size={20} />
                 </button>
               </div>
@@ -135,11 +142,16 @@ export default function Navbar() {
                   <button
                     onClick={() => setMobileServicesOpen((v) => !v)}
                     className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition ${
-                      pathname.startsWith("/services") ? "bg-blue-50 text-blue-600" : "text-gray-700 hover:bg-gray-50"
+                      pathname.startsWith("/services")
+                        ? "bg-blue-50 text-blue-600"
+                        : "text-gray-700 hover:bg-gray-50"
                     }`}
                   >
                     Services
-                    <ChevronDown size={16} className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                    <ChevronDown
+                      size={16}
+                      className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
+                    />
                   </button>
                   <AnimatePresence>
                     {mobileServicesOpen && (
@@ -150,9 +162,13 @@ export default function Navbar() {
                         className="overflow-hidden ml-3 mt-1 space-y-0.5"
                       >
                         {services.map((s) => (
-                          <Link key={s.href} href={s.href}
+                          <Link
+                            key={s.href}
+                            href={s.href}
                             className={`block px-4 py-2.5 rounded-xl text-sm transition ${
-                              pathname === s.href ? "bg-blue-50 text-blue-600" : "text-gray-600 hover:bg-gray-50"
+                              pathname === s.href
+                                ? "bg-blue-50 text-blue-600"
+                                : "text-gray-600 hover:bg-gray-50"
                             }`}
                           >
                             {s.name}
@@ -164,9 +180,13 @@ export default function Navbar() {
                 </div>
 
                 {navLinks.map((link) => (
-                  <Link key={link.name} href={link.href}
+                  <Link
+                    key={link.name}
+                    href={link.href}
                     className={`block px-4 py-3 rounded-xl text-sm font-medium transition ${
-                      pathname === link.href ? "bg-blue-50 text-blue-600" : "text-gray-700 hover:bg-gray-50"
+                      pathname === link.href
+                        ? "bg-blue-50 text-blue-600"
+                        : "text-gray-700 hover:bg-gray-50"
                     }`}
                   >
                     {link.name}
@@ -175,7 +195,10 @@ export default function Navbar() {
               </nav>
 
               <div className="p-5 border-t">
-                <Link href="/contact" className="btn-primary block text-center text-sm">
+                <Link
+                  href="/contact"
+                  className="btn-primary block text-center text-sm"
+                >
                   Get Free Consultation
                 </Link>
               </div>
@@ -187,7 +210,6 @@ export default function Navbar() {
   );
 }
 
-
 /* ===== LOGO — image jika ada, fallback ke text ===== */
 function NavLogo() {
   return (
@@ -198,7 +220,9 @@ function NavLogo() {
           alt="Sadino Technology"
           fill
           className="object-contain"
-          onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+          onError={(e) => {
+            (e.target as HTMLImageElement).style.display = "none";
+          }}
         />
       </div>
       <span className="text-xl font-extrabold tracking-tight text-gray-900">
@@ -230,24 +254,37 @@ function ServicesDropdown() {
   // Close on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+      if (ref.current && !ref.current.contains(e.target as Node))
+        setOpen(false);
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
   // Close on route change
-  useEffect(() => { setOpen(false); }, [pathname]);
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
-    <div ref={ref} className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <button
         className={`px-4 py-2 text-sm font-medium flex items-center gap-1 transition-colors duration-150 ${
-          isActive ? "text-blue-600 border-b-2 border-blue-600" : "text-gray-600 hover:text-blue-600"
+          isActive
+            ? "text-blue-600 border-b-2 border-blue-600"
+            : "text-gray-600 hover:text-blue-600"
         }`}
       >
         Services
-        <motion.span animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }}>
+        <motion.span
+          animate={{ rotate: open ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
+        >
           <ChevronDown size={14} />
         </motion.span>
       </button>

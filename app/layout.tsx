@@ -18,18 +18,35 @@ export const metadata: Metadata = {
     default: "Sadino Technology",
     template: "%s | Sadino Technology",
   },
+  icons: {
+    icon: "/favicon.png",
+  },
   description:
     "Software house specializing in web development, UI/UX design, and scalable backend solutions.",
-  keywords: ["Software House", "Web Development", "UI UX Design", "Backend API", "Mobile Apps"],
+  keywords: [
+    "Software House",
+    "Web Development",
+    "UI UX Design",
+    "Backend API",
+    "Mobile Apps",
+  ],
   authors: [{ name: "Sadino Technology" }],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={`${jakarta.variable} h-full`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link rel="preconnect" href="https://images.unsplash.com" />
       </head>
       <body className="min-h-screen flex flex-col bg-[#f7f9fb] text-gray-900 antialiased font-[var(--font-jakarta)]">
